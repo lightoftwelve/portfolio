@@ -1,0 +1,316 @@
+/* Sets line height, standard font size, removes text decoration and sets font family */
+* {
+    line-height: 1.5;
+    font-size: 16px;
+    text-decoration: none;
+    font-family: 'Cormorant', sans-serif;
+}
+
+/* Sets the font size for h2 */
+h2 {
+    font-size: 24px;
+}
+
+/* Sets the font size for h3 */
+h3 {
+    font-size: 18px;
+}
+
+/* Labels the Header as a flex box, and styles the flex box to have center alignment, evenly disribute space between h1 and nav, background color and padding */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #31243e;
+    padding: 50px 0px 50px 0px;
+}
+
+/* Styles the H1 heading in the header with padding, margin, font size, color, background and font weight */
+header h1 {
+    padding-left: 50px;
+    padding-right: 10px;
+    margin: 0;
+    font-size: 36px;
+    color: #ffffff;
+    background-color: #2842A8;
+    font-weight: 500;
+}
+
+/* Styles the header nav to be a flexbox with 24px font size letters */
+header nav {
+    display: flex;
+    font-size: 24px;
+}
+  
+/* Styles the anchors in the header nav with margin, text color, padding */
+header nav a {
+    margin-left: 10px;
+    color: #ffffff;
+    padding: 0 15px;
+}
+
+/* Styles the hover effects of the anchors in the header nav with hover color, and matching nav a padding and font size to limit movement when hovering */
+header nav a:hover {
+    color: #B01C31;
+    padding: 0 15px;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+/* Page Heading Image and establishes a positioning for an element to be relative to the picture for child elements */
+.photo-heading {
+    position: relative;
+}
+
+/* Styles the photo to be 100% of the page with and automatically adjust height to aspect ratio */
+.photo-heading img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styles the position and look of the text overlay ontop of the image: image is 75% from the top and 0 from the right, vertically centered using transform, content padding, font size, text color, and background color */
+.heading-overlay {
+    display: flex;
+    position: absolute;
+    top: 75%;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50%);
+    padding-left: 10px;
+    padding-right: 50px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #2842A8;
+}
+
+/* Parents for contact me, about me & work container for section */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-height: auto;
+    margin-bottom: 15px;
+    background-color: lightgray;
+    box-sizing: border-box;
+}
+
+/* Styles aside with width, padding, text color, background color, a red right border, font weight, and border box to ensure total width and height of elements include the padding and border */
+.container aside {
+    flex: 1;
+    padding: 50px;
+    color: #ffffff;
+    background-color: #2842A8;
+    border-right: 3px solid #B01C31;
+    font-weight: 500;
+    box-sizing: border-box;
+}
+
+/* Styles section with width, padding, center content align, and border box to ensure total width and height of elements include the padding and border */
+.container section, .container article {
+    flex: 9;
+    padding: 20px;
+    align-content: center;
+    box-sizing: border-box;
+}
+
+/* Styles the anchor links to be inline, with a 10px margin, padding and white text */
+.container article a {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 15px;
+    color: #ffffff;
+}
+
+/* When scrolling over links, they turn red */
+.container section a:hover, .container article a:hover {
+    color: #ffffff;
+    padding: 10px;
+}
+
+/* Centers elements horizontally so image will appear in the middle */
+.wrap-article img {
+    padding-top: 10px;
+    display: block;
+    margin: auto;
+}
+
+/* Puts space between small picture boxes so they do not touch */
+.work-box {
+    flex-basis: 49%;
+    margin: 0.5%; 
+}
+
+/* Makes large picture box full width */
+.work-box-large {
+    flex-basis: 100%;
+}
+
+/* Puts small picture boxes into a flex container and allows flex box to wrap onto multiple lines. Also distribute items evenly */
+.work-box-small-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Styles the flex container to have absolute positioned 50% transparent black overlay, with centered text and a smooth transition effect for the animation in the background color */
+.work-box-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-color: rgba(0,0,0,0.5);
+    transition: background-color 0.3s ease;
+}
+
+/* Adds transparent black over images as part of the hover effect - RGBA in this case for Red, Green, Blue & Alpha which is for transparency */
+.work-box:hover .work-box-overlay,
+.work-box-large:hover .work-box-overlay {
+    background-color: rgba(0,0,0,0);
+}
+
+/* Adds position relative to existing .work-box and .work-box-large and overflow makes it so that the picture doesnt spill over */
+.work-box, .work-box-large {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sets the width to 100% and height to auto for the work box and controls the transition animation to occur over 0.2 seconds */
+.work-box img, .work-box-large img {
+    width: 100%;
+    height: auto;
+    transition: transform .2s;
+}
+
+/* Styles the zoom in picture effect: when hovering over  */
+.work-box:hover img, .work-box-large:hover img {
+    transform: scale(1.1);
+}
+
+/* Styles double border, padding, text color, background color and left alignment of anchor elements */
+.heading-overlay a {
+    border-style: double;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #2842A8;
+    text-align: left;
+}
+
+/* Turns link red when hovered over */
+div.heading-overlay a:hover {
+    color: #B01C31;
+    cursor: pointer;
+}
+
+/* Styles buttons in Contact section to be inline, have a double white border, padding, text color, alignment and background color */
+.nav-button {
+    display: inline-block;
+    box-sizing: border-box; 
+    border: 2px double white; 
+    padding: 10px;
+    color: #ffffff;
+    background-color: #2842A8;
+    text-align: left;
+}
+
+/* Styles buttons in Contact when they're hovered over to have white font, red background, padding, double white border and have a pointer curser */
+.nav-button:hover {
+    color: #ffffff;
+    background-color: #B01C31;
+    padding: 10px;
+    border: 2px double #ffffff;
+    cursor: pointer;
+}
+
+/* Sets list to have a 60px indent */
+.square-bullet-list {
+    padding-left: 50px;
+}
+
+/* Sets the list to have square bullet points, a 10px bottom margin and a line-height of 1.2 */
+.square-bullet-list li {
+    margin-bottom: 10px;
+    list-style-type: square ;
+    line-height: 1.2;
+}
+
+/* Styles the footer to have padding, align right, background color and text color */
+footer {
+    padding: 10px;
+    text-align: right;
+    background: #13293d;
+    color: #ffffff;
+}
+
+/* Media query that applies to screens that are a maximum width of 768px */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+
+    header h1 {
+        margin-bottom: 20px;
+        padding-left: 50px;
+        padding-right: 10px;
+        font-size: 36px;
+        color: #ffffff;
+        background-color: #2842A8;
+        font-weight: 500;
+    }
+
+    header nav {
+        flex-direction: column; 
+        align-items: flex-start;
+    
+    }
+
+    header nav a {
+        margin-bottom: 10px;
+        padding: 0 15px;
+        color: #ffffff;
+    }
+
+    .container {
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .container aside,
+    .container section, .container article {
+      width: 100%;
+      padding: 2px;
+    }
+  
+    .nav-button {
+        display: block;
+        width: 100vw;
+        box-sizing: border-box;
+        background-color: #2842A8;
+        padding: 10px 20px;
+    }
+    
+    .nav-button:hover {
+        background-color: #B01C31;
+        border-color: #B01C31;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .work-box-small-wrapper {
+        flex-direction: column;
+    }
+
+    .work-box {
+        flex-basis: 100%;
+        margin: 0;
+    }
+}
