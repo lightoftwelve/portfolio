@@ -1,0 +1,41 @@
+/* Reset browser default CSS */
+body, main, section, article, figure, img, nav, ul, li, div, aside, a, a:hover {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Resets HTML5 semantic elements and their display properties to block which is the default value for most block level elements to ensure the elements behave as expected in older browsers*/
+main, section, article, figure, nav, aside {
+    display: block;
+}
+
+/* Resets line height to 1.5x */
+body {
+    line-height: 1.5;
+}
+
+/* Removes styling from ul, li and nav */
+ul, li, nav {
+    list-style: none;
+}
+
+/* Removes styling from anchor elements and link elements when hovered over */
+a, a:hover {
+    text-decoration: none;
+}
+
+/* Resets styling to ensure flex container will wrap onto multiple lines if there isn't enough room on a single line */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Resets ancor elements when they are in focus or active states */
+a:focus,
+a:active {
+    outline: none;
+}
