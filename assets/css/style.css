@@ -72,6 +72,7 @@ header nav a:hover {
 .heading-overlay {
     display: flex;
     position: absolute;
+    flex-direction: column;
     top: 75%;
     right: 0;
     align-items: center;
@@ -82,6 +83,11 @@ header nav a:hover {
     font-size: 20px;
     color: #ffffff;
     background-color: #2842A8;
+}
+
+/* Decreases space betweenlink and paragraph in heading overlay */
+.heading-overlay p {
+    margin-top: 0;
 }
 
 /* Parents for contact me, about me & work container for section */
@@ -215,6 +221,7 @@ div.heading-overlay a:hover {
     box-sizing: border-box; 
     border: 2px double white; 
     padding: 10px;
+    margin-right: 20px;
     color: #ffffff;
     background-color: #2842A8;
     text-align: left;
@@ -225,6 +232,7 @@ div.heading-overlay a:hover {
     color: #ffffff;
     background-color: #B01C31;
     padding: 10px;
+    margin-right: 20px;
     border: 2px double #ffffff;
     cursor: pointer;
 }
