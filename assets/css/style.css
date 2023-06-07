@@ -41,7 +41,7 @@ header nav {
     display: flex;
     font-size: 24px;
 }
-  
+
 /* Styles the anchors in the header nav with margin, text color, padding */
 header nav a {
     margin-left: 10px;
@@ -62,20 +62,20 @@ header nav a:hover {
     position: relative;
 }
 
-/* Styles the photo to be 100% of the page with and automatically adjust height to aspect ratio */
+/* Styles the photo to take up 100% of the width of its parent container, and automatically adjusts height according to aspect ratio */
 .photo-heading img {
     width: 100%;
     height: auto;
 }
 
-/* Styles the position and look of the text overlay ontop of the image: image is 75% from the top and 0 from the right, vertically centered using transform, content padding, font size, text color, and background color */
+/* Styles the position a div containing text, and its top edge is positioned at 75% of its parent's height, vertically centered using transform, content padding, font size, text color, and background color */
 .heading-overlay {
     display: flex;
     position: absolute;
     flex-direction: column;
     top: 75%;
     right: 0;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     transform: translateY(-50%);
     padding-left: 10px;
@@ -85,9 +85,16 @@ header nav a:hover {
     background-color: #2842A8;
 }
 
+/* Styles the h3 to have margin and text align */
+.heading-overlay h3 {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
 /* Decreases space betweenlink and paragraph in heading overlay */
 .heading-overlay p {
     margin-top: 0;
+    text-align: left;
 }
 
 /* Parents for contact me, about me & work container for section */
@@ -113,7 +120,8 @@ header nav a:hover {
 }
 
 /* Styles section with width, padding, center content align, and border box to ensure total width and height of elements include the padding and border */
-.container section, .container article {
+.container section,
+.container article {
     flex: 9;
     padding: 20px;
     align-content: center;
@@ -128,12 +136,6 @@ header nav a:hover {
     color: #ffffff;
 }
 
-/* When scrolling over links, they turn red */
-.container section a:hover, .container article a:hover {
-    color: #ffffff;
-    padding: 10px;
-}
-
 /* Centers elements horizontally so image will appear in the middle */
 .wrap-article img {
     padding-top: 10px;
@@ -144,7 +146,7 @@ header nav a:hover {
 /* Puts space between small picture boxes so they do not touch */
 .work-box {
     flex-basis: 49%;
-    margin: 0.5%; 
+    margin: 0.5%;
 }
 
 /* Makes large picture box full width */
@@ -172,54 +174,42 @@ header nav a:hover {
     flex-direction: column;
     justify-content: center;
     color: #fff;
-    background-color: rgba(0,0,0,0.5);
-    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease;
 }
 
 /* Adds transparent black over images as part of the hover effect - RGBA in this case for Red, Green, Blue & Alpha which is for transparency */
 .work-box:hover .work-box-overlay,
 .work-box-large:hover .work-box-overlay {
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0);
 }
 
 /* Adds position relative to existing .work-box and .work-box-large and overflow makes it so that the picture doesnt spill over */
-.work-box, .work-box-large {
+.work-box,
+.work-box-large {
     position: relative;
     overflow: hidden;
 }
 
-/* Sets the width to 100% and height to auto for the work box and controls the transition animation to occur over 0.2 seconds */
-.work-box img, .work-box-large img {
+/* Sets the width to 100% and height to auto for the work box and controls the transition animation to occur over 0.5 seconds */
+.work-box img,
+.work-box-large img {
     width: 100%;
-    height: auto;
-    transition: transform .2s;
+    height: 100%;
+    transition: background-color 0.5s ease;
 }
 
-/* Styles the zoom in picture effect: when hovering over  */
-.work-box:hover img, .work-box-large:hover img {
+/* Styles the zoom in picture effect: enlarges the image when hovering over  */
+.work-box:hover img,
+.work-box-large:hover img {
     transform: scale(1.1);
-}
-
-/* Styles double border, padding, text color, background color and left alignment of anchor elements */
-.heading-overlay a {
-    border-style: double;
-    padding: 10px;
-    color: #ffffff;
-    background-color: #2842A8;
-    text-align: left;
-}
-
-/* Turns link red when hovered over */
-div.heading-overlay a:hover {
-    color: #B01C31;
-    cursor: pointer;
 }
 
 /* Styles buttons in Contact section to be inline, have a double white border, padding, text color, alignment and background color */
 .nav-button {
     display: inline-block;
-    box-sizing: border-box; 
-    border: 2px double white; 
+    box-sizing: border-box;
+    border: 1px double white;
     padding: 10px;
     margin-right: 20px;
     color: #ffffff;
@@ -233,11 +223,11 @@ div.heading-overlay a:hover {
     background-color: #B01C31;
     padding: 10px;
     margin-right: 20px;
-    border: 2px double #ffffff;
+    border: 1px double #ffffff;
     cursor: pointer;
 }
 
-/* Sets list to have a 60px indent */
+/* Sets list to have a 50px indent */
 .square-bullet-list {
     padding-left: 50px;
 }
@@ -245,7 +235,7 @@ div.heading-overlay a:hover {
 /* Sets the list to have square bullet points, a 10px bottom margin and a line-height of 1.2 */
 .square-bullet-list li {
     margin-bottom: 10px;
-    list-style-type: square ;
+    list-style-type: square;
     line-height: 1.2;
 }
 
@@ -257,7 +247,7 @@ footer {
     color: #ffffff;
 }
 
-/* Media query that applies to screens that are a maximum width of 768px */
+/* Styles for screens with a width of up to 768px, typically for tablets and mobile devices. Adjusts layout and sizing to accommodate smaller screens */
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
@@ -276,9 +266,9 @@ footer {
     }
 
     header nav {
-        flex-direction: column; 
+        flex-direction: column;
         align-items: flex-start;
-    
+
     }
 
     header nav a {
@@ -293,11 +283,12 @@ footer {
     }
 
     .container aside,
-    .container section, .container article {
-      width: 100%;
-      padding: 2px;
+    .container section,
+    .container article {
+        width: 100%;
+        padding: 2px;
     }
-  
+
     .nav-button {
         display: block;
         width: 100vw;
@@ -305,7 +296,7 @@ footer {
         background-color: #2842A8;
         padding: 10px 20px;
     }
-    
+
     .nav-button:hover {
         background-color: #B01C31;
         border-color: #B01C31;
