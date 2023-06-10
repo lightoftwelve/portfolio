@@ -316,6 +316,11 @@ footer {
         cursor: pointer;
     }
 
+    .work-box-large {
+        flex-basis: 100%;
+        display: flex;
+    }
+
     .work-box .heading-overlay h3 {
         font-size: 16px;
     }
