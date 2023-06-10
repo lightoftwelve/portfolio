@@ -290,26 +290,31 @@ footer {
     }
 
     .nav-button {
-        display: block;
-        width: 100vw;
-        box-sizing: border-box;
-        background-color: #2842A8;
-        padding: 10px 20px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: 0;
     }
 
     .nav-button:hover {
+        width: 100%;
+        margin-left: auto;
+        margin-right: 0;
         background-color: #B01C31;
         border-color: #B01C31;
         color: #ffffff;
         cursor: pointer;
     }
 
-    .work-box-small-wrapper {
-        flex-direction: column;
+    .work-box .heading-overlay h3 {
+        font-size: 16px;
+    }
+
+    .work-box .heading-overlay p {
+        font-size: 14px;
     }
 
     .work-box {
-        flex-basis: 100%;
-        margin: 0;
+        flex-basis: 48%;
+        margin: 1%;
     }
 }
