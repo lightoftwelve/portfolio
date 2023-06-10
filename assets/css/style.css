@@ -283,6 +283,11 @@ footer {
         color: #ffffff;
     }
 
+    .wrap-article img {
+        max-width: 100%;
+        height: 175px;
+    }
+
     .container {
         padding: 0;
         flex-direction: column;
